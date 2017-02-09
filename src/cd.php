@@ -9,6 +9,12 @@ class Cd
         $this->title = $title;
         $this->artist = $artist;
     }
+
+    function save()
+    {
+        array_push($_SESSION['list_of_cds'], $this);
+    }
+
 }
 
 ?>
