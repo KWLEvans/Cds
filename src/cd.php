@@ -12,7 +12,11 @@ class Cd
 
     function save()
     {
-        array_push($_SESSION['list_of_cds'], $this);
+        if (in_array($this->artist, array_keys($_SESSION['list_of_cds']))) {
+            array_push($_SESSION['list_of_cds'][$this->artist], $this);
+        } else {
+            $_SESSION['list_of_cds'][$this->artist] = [$this];
+        }
     }
 
     static function getAll()
