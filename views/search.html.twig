@@ -1,6 +1,10 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
 <h1>Who are you looking for?</h1>
 <form action="/results" method="post">
     <label for="artist_search">Artist name: </label>
     <input type="text" id="artist_search" name="artist_search">
     <button type="submit">Find 'em!</button>
 </form>
+{% endblock %}

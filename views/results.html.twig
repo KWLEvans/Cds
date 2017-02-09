@@ -1,3 +1,6 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
 <h1>All matching albums</h1>
 <ul>
     {% for artist in cds|keys %}
@@ -10,3 +13,4 @@
     </li>
     {% endfor %}
 </ul>
+{% endblock %}

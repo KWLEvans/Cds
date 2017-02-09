@@ -35,7 +35,7 @@
         $matches = [];
         foreach (array_keys($cds) as $artist) {
             if (preg_match(("/" . $query . "/i"), $artist)) {
-                $matches[$artist] = $cds[$cd];
+                $matches[$artist] = $cds[$artist];
             }
         }
         return $app["twig"]->render("results.html.twig", ["cds" => $matches]);
