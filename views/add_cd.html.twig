@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Add New CD{% endblock %}
+{% block content %}
+    <h1>Add a new CD to your collection!</h1>
+    <form action="/list" method="post">
+        <label for="title">Title: </label>
+        <input id="title" name="title" type="text">
+        <button type="submit">Add CD</button>
+    </form>
+{% endblock %}
