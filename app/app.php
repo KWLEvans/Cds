@@ -14,7 +14,7 @@
     });
 
     $app->post("/list", function() use ($app) {
-        $new_cd = new Cd($_POST["title"]);
+        $new_cd = new Cd($_POST["title"], $_POST["artist"]);
         return $app["twig"]->render("cd_list.html.twig", ["cd" => $new_cd]);
     });
 
