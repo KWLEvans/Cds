@@ -25,5 +25,21 @@
         return $app["twig"]->render("cd_list.html.twig", ["cds" => $cds]);
     });
 
+    $app->get("/search", function() use ($app) {
+        return $app["twig"]->render("search.html.twig");
+    });
+
+    $app->post("/results", function() use ($app) {
+        $query = $_POST["artist_search"];
+        $cds = Cd::getAll();
+        $matches = [];
+        foreach (array_keys($cds) as $artist) {
+            if (preg_match(("/" . $query . "/i"), $artist)) {
+                $matches[$artist] = $cds[$cd];
+            }
+        }
+        return $app["twig"]->render("results.html.twig", ["cds" => $matches]);
+    });
+
     return $app;
 ?>

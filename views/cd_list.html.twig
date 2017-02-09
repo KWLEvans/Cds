@@ -5,11 +5,11 @@
     <ul>
         {% for artist in cds|keys %}
         <li>{{ artist }}
-            <ul>
+            <select>
                 {% for cd in cds[artist] %}
-                <li>{{ cd.title }}</li>
+                <option>{{ cd.title }}</option>
                 {% endfor %}
-            </ul>
+            </select>
         </li>
         {% endfor %}
     </ul>

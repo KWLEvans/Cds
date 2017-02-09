@@ -1,0 +1,12 @@
+<h1>All matching albums</h1>
+<ul>
+    {% for artist in cds|keys %}
+    <li>{{ artist }}
+        <ul>
+        {% for cd in cds[artist]%}
+        <li>{{ cd.title }}</li>
+        {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
