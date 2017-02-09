@@ -15,6 +15,11 @@ class Cd
         array_push($_SESSION['list_of_cds'], $this);
     }
 
+    static function getAll()
+    {
+        return $_SESSION['list_of_cds'];
+    }
+
 }
 
 ?>

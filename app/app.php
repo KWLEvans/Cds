@@ -21,7 +21,8 @@
     $app->post("/list", function() use ($app) {
         $new_cd = new Cd($_POST["title"], $_POST["artist"]);
         $new_cd->save();
-        return $app["twig"]->render("cd_list.html.twig", ["cd" => $new_cd]);
+        $cds = Cd::getAll();
+        return $app["twig"]->render("cd_list.html.twig", ["cds" => $cds]);
     });
 
     return $app;

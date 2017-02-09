@@ -3,10 +3,12 @@
 {% block title %}Your CD Collection{% endblock %}
 {% block content %}
     <ul>
+        {% for cd in cds %}
         <li>{{ cd.artist }}
             <ul>
                 <li>{{ cd.title }}</li>
             </ul>
         </li>
+        {% endfor %}
     </ul>
 {% endblock %}
